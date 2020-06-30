@@ -26,4 +26,4 @@ class Circle:
         return self.color
 
     def draw(self, window):
-        pygame.draw.circle(window.getPygameSurface(), self.color, (self.position.x, self.position.y), self.radious)
+        pygame.draw.circle(window.getPygameSurface(), self.color, (self.position.x + self.radious, self.position.y + self.radious), self.radious)
