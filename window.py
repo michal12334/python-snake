@@ -12,5 +12,8 @@ class Window:
     def setFrameRateLimit(self, fps):
         self.fps = fps
 
-    def setTitle(title):
+    def setTitle(self, title):
         pygame.display.set_caption(title)
+
+    def display(self):
+        pygame.display.update()
