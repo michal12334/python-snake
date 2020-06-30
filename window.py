@@ -17,3 +17,6 @@ class Window:
 
     def display(self):
         pygame.display.update()
+
+    def getPygameSurface(self):
+        return self.window

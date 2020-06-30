@@ -26,4 +26,4 @@ class Rectangle:
         return self.color
 
     def draw(self, window):
-        pygame.draw.rect(window, self.color, (self.position.x, self.position.y, self.size.x, self.size.y))
+        pygame.draw.rect(window.getPygameSurface(), self.color, (self.position.x, self.position.y, self.size.x, self.size.y))
