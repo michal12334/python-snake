@@ -5,6 +5,7 @@ class Window:
         self.width = width
         self.height = height
         self.window = pygame.display.set_mode((self.width, self.height))
+        self.clock = pygame.time.Clock()
 
     def draw(self, obj):
         obj.draw(self)
@@ -23,3 +24,4 @@ class Window:
 
     def clear(self, color = (0, 0, 0)):
         self.window.fill(color)
+        self.clock.tick(self.fps)
