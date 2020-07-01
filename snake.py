@@ -11,6 +11,8 @@ class Snake:
 
     def __init__(self):
         self.snakeParts = [Rectangle(Vector2(300, 300), self.SNAKE_PART_SIZE), Rectangle(Vector2(300, 330), self.SNAKE_PART_SIZE)]
+        self.snakeParts[0].setColor(0, 255, 0)
+        self.snakeParts[1].setColor(0, 255, 0)
         self.direction = UP
         self.newDirection = UP
         self.counter = 0
