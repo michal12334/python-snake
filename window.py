@@ -20,3 +20,6 @@ class Window:
 
     def getPygameSurface(self):
         return self.window
+
+    def clear(self, color = (0, 0, 0)):
+        self.window.fill(color)
