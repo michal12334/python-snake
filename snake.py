@@ -1,4 +1,6 @@
 from rectangle import *
+import time
+import random
 
 # Direction:
 UP = 1
@@ -71,3 +73,15 @@ class Snake:
             self.counter = 0
             self.direction = self.newDirection
             self.setAllPartsPosition()
+
+    def isAppleEaten(self, position):
+        for snakePart in self.snakeParts:
+            if snakePart.getPosition() == position:
+                return True
+        return False
+
+    def generateNewPositionForApple(self):
+        position = Vector2(random.randrange(0, 29) * 30, random.randrange(0, 29) * 30)
+        while self.isAppleEaten(position):
+            position = Vector2(random.randrange(0, 29) * 30, random.randrange(0, 29) * 30)
+        return position
