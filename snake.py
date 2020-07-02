@@ -87,4 +87,6 @@ class Snake:
         return position
 
     def addNewPart(self):
-        self.snakeParts.append(self.snakeParts[len(self.snakeParts) - 1])
+        newPart = Rectangle(self.snakeParts[0].getPosition(), self.SNAKE_PART_SIZE)
+        newPart.setColor(0, 255, 0)
+        self.snakeParts.append(newPart)
