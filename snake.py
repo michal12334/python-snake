@@ -76,7 +76,7 @@ class Snake:
 
     def isAppleEaten(self, position):
         for snakePart in self.snakeParts:
-            if snakePart.getPosition() == position:
+            if snakePart.getPosition().x == position.x and snakePart.getPosition().y == position.y:
                 return True
         return False
 
