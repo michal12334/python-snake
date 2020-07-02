@@ -85,3 +85,6 @@ class Snake:
         while self.isAppleEaten(position):
             position = Vector2(random.randrange(0, 29) * 30, random.randrange(0, 29) * 30)
         return position
+
+    def addNewPart(self):
+        self.snakeParts.append(self.snakeParts[len(self.snakeParts) - 1])
