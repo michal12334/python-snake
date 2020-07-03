@@ -1,17 +1,7 @@
 import pygame
 from window import *
 from snake import *
-from apple import *
-
-def gameLoop():
-    snake.update()
-
-    if snake.isAppleEaten(apple.getPosition()):
-        apple.setPosition(snake.generateNewPositionForApple())
-        snake.addNewPart()
-
-    window.draw(snake)
-    window.draw(apple)
+from apple import *    
 
 def main():
     window = Window(900, 900)
@@ -29,8 +19,15 @@ def main():
             if event.type == pygame.QUIT:
                 isOpen = False
 
+        if snake.isAppleEaten(apple.getPosition()):
+            apple.setPosition(snake.generateNewPositionForApple())
+            snake.addNewPart()
+
+        snake.update()
+
         window.clear()
-        gameLoop()    
+        window.draw(snake)
+        window.draw(apple)
         window.display()
 
 main()
