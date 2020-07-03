@@ -105,3 +105,6 @@ class Snake:
         x = self.snakeParts[0].getPosition().x
         y = self.snakeParts[0].getPosition().y
         return x < 0 or x + self.SNAKE_PART_SIZE > 900 or y < 0 or y + self.SNAKE_PART_SIZE > 900
+
+    def isDead(self):
+        return self.isHitItself() or self.isHitWall()
