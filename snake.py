@@ -90,3 +90,13 @@ class Snake:
         newPart = Rectangle(self.snakeParts[0].getPosition(), self.SNAKE_PART_SIZE)
         newPart.setColor(0, 255, 0)
         self.snakeParts.append(newPart)
+
+    def isHitItself(self):
+        x = self.snakeParts[0].getPosition().x
+        y = self.snakeParts[0].getPosition().y
+        for i in range(1, len(self.snakeParts)):
+            xn = self.snakeParts[i].getPosition().x
+            yn = self.snakeParts[i].getPosition().y
+            if xn == x and yn == y:
+                return True
+        return False
